@@ -6,6 +6,7 @@ html {
 body {
     margin: 0;
     font-family: 'Roboto Condensed', sans-serif;
+    cursor: crosshair;
 }
 
 
@@ -32,13 +33,14 @@ body {
     margin: auto;
     left: 0;
     right: 0;
-    width: clamp(23rem, 27rem, 31rem);
+    width: clamp(18rem, 24rem + 3.7vw, 35rem);
+    /* width: 400px; */
 }
 
 .navigation-menu-item {
     margin: 0 .7rem;
     text-decoration: none;
-    font-size: clamp(1.5rem, 2.5vw, 1.7rem);
+    font-size:  clamp(1.5rem, 0.56vw + 1.28rem, 2rem);
     color: blue;
 
 }
@@ -60,38 +62,41 @@ h1 {
 }
 
 h2 {
-    font-size: clamp(6.5rem, 2.786rem + 6.57vw, 16rem);
+    font-size: clamp(5.2rem, 7.73vw + 2.11rem, 12rem);
     text-transform: uppercase;
     margin: 0;
     padding-bottom: 3rem;
+    line-height: 100%;
 
 }
+
 
 h3 {
-    font-size: clamp(3rem, 2.455rem + 2.73vw, 4.5rem);
+    font-size: clamp(3rem, 1.7vw + 2.32rem, 4.5rem);
     font-weight: 700;
+    margin: 0;
+    padding-bottom: 3rem;
 }
+
 
 p {
     margin: 0;
 }
 
 
-p + p {
-    padding-top: 3rem;
-}
-
 .main-p {
-    font-size: clamp(3rem, 1.871rem + 2.14vw, 4.5rem);
-    margin: 0;
+    font-size: clamp(3rem, 1.7vw + 2.32rem, 4.5rem);
     line-height: 150%;
 }
 
+
+
 .large-p {
-    font-size: clamp(3.5rem, 3.214rem + 1.43vw, 4.5rem);
+    font-size: clamp(3.5rem, 1.14vw + 3.05rem, 4.5rem);
     font-weight: 300;
     margin: 0;
 }
+
 
 .small-p {
     font-size: 2rem;
@@ -126,17 +131,35 @@ p + p {
 
 .large-ladi--weak {
     font-family: 'Ladi-Weak';
-    font-size: clamp(8.5rem, 7.5rem + 5vw, 12rem);
+    font-size: clamp(8.5rem, 3.98vw + 6.91rem, 12rem);
     padding-bottom: 3rem;
 
 }
-
 
 .text-align--center {
     text-align: center;
 }
 
-.footer {
+
+.linear-gradient--blue {
+    background: linear-gradient(to right, #0f0f0f 0%, #0f0f0f 15%, #0f0f0f 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background .5s ease;
+    background-size: 200% 100%;
+    width: fit-content;
+}
+
+.linear-gradient--blue:hover {
+    background: linear-gradient(to right, #0f0f0f 0%, #0f0f0f 15%, #0000ff 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-position-x: left;
+    background-size: 100% 100%;
+    }
+
+
+.post-footer {
     border: 1px;
     border-color: #f5f5f5;
     border-style: solid;
@@ -146,8 +169,6 @@ p + p {
     text-align: right;
     padding-top: 1rem;
     margin-top: 5rem;
-
-
 }
 
 
@@ -157,13 +178,13 @@ button,
 .btn {
     color: #f5f5f5;
     font-size: clamp(1.5rem, 2.1rem + 0.71vw, 3rem);
-    font-size: 2.2rem;
+    /* font-size: 2.2rem; */
     background-color: transparent;
     border: 2px solid #f5f5f5;
     border-radius: 10rem;
     text-decoration: none;
-    padding: 1.5rem 4rem;
-    width: 6rem;
+    padding: 1.5rem 6rem;
+    width: 10rem;
     text-align: center;
     transition: .3s;
 }
@@ -196,18 +217,18 @@ button:hover,
     padding: 7rem 0 7rem;
 }
 
+.item-align--center {
+    align-self: center;
+}
 
-
-
-
-/*        margins         */
+/*        general margins         */
 
 .small-margin {
-    padding: 4rem 2.5rem 7rem;
+    padding: 6rem 2.5rem 7rem;
 }
 
 .medium-margin {
-    padding: 7rem 2.5rem;
+    padding: 6rem 2.5rem;
 }
 
 .vlarge-margin {
@@ -215,7 +236,17 @@ button:hover,
     height: 100vh;
     padding: 21.5rem 2.5rem 0;
 }
+/* valorar si canviar els noms de dalt de margin a padding */
 
+
+/*           other margins       */
+.margin-top--large {
+    margin-top: 10rem;
+}
+
+.main-p + .main-p {
+    padding-top: 3rem;
+}
 
 /*             images svgs and other            */
 
@@ -227,9 +258,10 @@ button:hover,
 
 .svg-name {
     fill: #f5f5f5;
+    /* position: relative;
+    left: 90%; */
     align-self: flex-end;
-    flex-grow: 1;
-
+    margin-top: 20vh;
 
 }
 
@@ -243,38 +275,40 @@ button:hover,
     }
 }
 
-
 img[alt="profile-picture-marina"] {
     width: 100vw;
     object-fit: cover;
 
 }
 
+img[alt="yellow-animation"] {
+    max-height: 50rem;
+    display: block;
+    margin: 0 auto;
+}
 
     /* IMAGES HOVER */
 
-a.image-mouseover {
+a.floating-image {
     position: relative;
     color: #f5f5f5;
     text-decoration-line: underline;
     text-decoration-thickness: 2.5px
   }
   
-  a.image-mouseover img {
+  a.floating-image img {
     position: absolute;
     opacity: 0;
-    /* width: 200px;
-    height: 200px; */
     left: -13rem;
     top: -3rem;
     /* transition: opacity .5s, top .5s; */
   }
   
-  a.image-mouseover:hover img {
+  a.floating-image:hover img {
     opacity: 1;
     top: 20px;
   }
-  .image-mouseove:visited {
+  .floating-image:visited {
     color: #f5f5f5;
   }
 
@@ -282,20 +316,53 @@ a.image-mouseover {
 
 /*       RESPONSIVE       */
 
-/* Pantallas de más de 950px                      */
-
-
-@media screen and (min-width: 769px) {
-    .section-split {
-        display: flex;
-    }
+@media screen and (min-width: 580px) {
 
     .small-margin {
-        padding: 10rem;
+        padding: 5rem;
     }
 
     .medium-margin {
-        padding: 15rem;
+        padding: 5rem;
+    }
+
+    .vlarge-margin {
+        padding: 20rem 5rem 0;
+    }
+
+}
+
+@media screen and (min-width: 950px) {
+
+    .pre-footer {
+        display: flex;
+        gap: 3rem;
+        ;
+    }
+
+    .half-viewport {
+        width: 50vw;
+        /* background-color: yellowgreen; */
+    }
+
+
+    .small-margin {
+        padding: 7.5rem;
+    }
+
+    .medium-margin {
+        padding: 7.5rem;
+    }
+
+    .vlarge-margin {
+        padding: 20rem 7.5rem 0;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+    .section-split {
+        display: flex;
     }
 
     [alt="profile-picture-marina"] {
@@ -303,6 +370,29 @@ a.image-mouseover {
         height: 100%;
         object-fit: none;
     }
+
+    .margin-top--large {
+        margin-top: 15rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+
+
+    .small-margin {
+        padding: 10rem;
+    }
+
+    .medium-margin {
+        padding: 10rem;
+    }
+
+    .vlarge-margin {
+        box-sizing: border-box;
+        height: 100vh;
+        padding: 20rem 10rem 0;
+    }
+
 }
 
 

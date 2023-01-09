@@ -1,406 +1,413 @@
 html {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    font-family: 'Roboto Condensed', sans-serif;
-    cursor: crosshair;
+  margin: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  cursor: crosshair;
 }
-
-
 
 @font-face {
-    font-family: 'Ladi-Weak';
-    src: local('Ladi-Weak') url('Ladi-Weak.woff2') format('woff2'), local('Ladi-Weak') url('Ladi-Weak.woff') format('woff');
+  font-family: "Ladi-Weak";
+  src: local("Ladi-Weak") url("Ladi-Weak.woff2") format("woff2"),
+    local("Ladi-Weak") url("Ladi-Weak.woff") format("woff");
+}
+
+/*               NAVIGATION BAR                */
+
+.nav-bar {
+  display: flex;
+  position: fixed;
+  background-color: rgba(245, 245, 245, 0.9);
+  width: clamp(18rem, 24rem + 3.7vw, 35rem);
+  justify-content: center;
+  list-style: none;
+  padding: 1.2rem 1.8rem 1.2rem;
+  border-radius: 3rem;
+  filter: drop-shadow(0 0 0.5rem rgb(0, 0, 255));
+  top: 2rem;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+
+.nav-bar-item {
+  color: rgb(0, 0, 255);
+  margin: 0 0.7rem;
+  text-decoration: none;
+  font-size: clamp(1.5rem, 0.56vw + 1.28rem, 2rem);
+}
+
+.nav-bar-item:hover {
+  font-style: italic;
+  letter-spacing: 0.1px;
+  /* Letter-spacing aplicado para evitar el movimiento de las palabras dentro de la barra del menú en el hover en cursiva */
+}
+
+.nav-bar-item:visited {
+  color: rgb(0, 0, 255);
+}
+
+/*               GENERAL STYLES                */
+
+/*        MARGINS         */
+
+.small-margin {
+  padding: 6rem 2.5rem 7rem;
+}
+
+.medium-margin {
+  padding: 6rem 2.5rem;
+}
+
+.large-margin {
+  padding: 21.5rem 2.5rem 0;
+}
+
+/*      Other margins       */
+
+.main-p + .main-p {
+  padding-top: 3rem;
+}
+
+.margin-top--large {
+  margin-top: 10rem;
 }
 
 
-/* MENU DISPLAY */
+/*         HEADINGS & P           */
 
-
-.navigation-menu {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    list-style: none;
-    padding: 1.2rem 1.8rem 1.2rem;
-    background-color: rgba(245, 245, 245, 0.90);
-    filter: drop-shadow(0 0 0.5rem blue);
-    border-radius: 3rem;
-    top: 2rem;
-    margin: auto;
-    left: 0;
-    right: 0;
-    width: clamp(18rem, 24rem + 3.7vw, 35rem);
-    /* width: 400px; */
-}
-
-.navigation-menu-item {
-    margin: 0 .7rem;
-    text-decoration: none;
-    font-size:  clamp(1.5rem, 0.56vw + 1.28rem, 2rem);
-    color: blue;
-
-}
-
-.navigation-menu-item:hover {
-    font-style: italic;
-    letter-spacing: .1px;
-    /* al hacer hover cambia el tamaño del botón, como se resuelve esto? 
-  si aplicamos un width a la clase menu navigation deja de pasar pero se sigue moviendo el contenido */
-}
-
-
-
-
-
-h1 {
-    margin: 0;
-    padding: 0;
+h1,
+h2,
+h3,
+p {
+  margin: 0;
 }
 
 h2 {
-    font-size: clamp(5.2rem, 7.73vw + 2.11rem, 12rem);
-    text-transform: uppercase;
-    margin: 0;
-    padding-bottom: 3rem;
-    line-height: 100%;
-
+  font-size: clamp(5.2rem, 7.73vw + 2.11rem, 12rem);
+  text-transform: uppercase;
+  padding-bottom: 3rem;
+  line-height: 100%;
 }
-
 
 h3 {
-    font-size: clamp(3rem, 1.7vw + 2.32rem, 4.5rem);
-    font-weight: 700;
-    margin: 0;
-    padding-bottom: 3rem;
+  font-size: clamp(3rem, 1.7vw + 2.32rem, 4.5rem);
+  font-weight: 700;
+  padding-bottom: 3rem;
 }
-
-
-p {
-    margin: 0;
-}
-
-
-.main-p {
-    font-size: clamp(3rem, 1.7vw + 2.32rem, 4.5rem);
-    line-height: 150%;
-}
-
-
-
-.large-p {
-    font-size: clamp(3.5rem, 1.14vw + 3.05rem, 4.5rem);
-    font-weight: 300;
-    margin: 0;
-}
-
 
 .small-p {
-    font-size: 2rem;
+  font-size: 2rem;
+}
+
+.main-p {
+  font-size: clamp(3rem, 1.7vw + 2.32rem, 4.5rem);
+  line-height: 150%;
+}
+
+.large-p {
+  font-size: clamp(3.5rem, 1.14vw + 3.05rem, 4.5rem);
+  font-weight: 300;
 }
 
 
-/*         Styles, colors & fonts         */
 
-.font-color--blue {
-    color: blue;
-}
+/*         FONTS & COLORS         */
 
 .bg-color--white {
-    background-color: #f5f5f5;
-    color: #0f0f0f;
+  background-color: rgb(245, 245, 245);
+  color: rgb(15, 15, 15);
 }
 
 .bg-color--blue {
-    background-color: blue;
-    color: #f5f5f5;
-
+  background-color: rgb(0, 0, 255);
+  color: rgb(245, 245, 245);
 }
 
 .bg-color--black {
-    background-color: #0f0f0f;
-    color: #f5f5f5;
+  background-color: rgb(15, 15, 15);
+  color: rgb(245, 245, 245);
 }
 
-.ladi--weak {
-    font-family: 'Ladi-Weak';
+.font-color--blue {
+  color: rgb(0, 0, 255);
 }
 
-.large-ladi--weak {
-    font-family: 'Ladi-Weak';
-    font-size: clamp(8.5rem, 3.98vw + 6.91rem, 12rem);
-    padding-bottom: 3rem;
-
+.font-fam--ladi-weak {
+  font-family: "Ladi-Weak";
 }
 
-.text-align--center {
-    text-align: center;
-}
-
-
-.linear-gradient--blue {
-    background: linear-gradient(to right, #0f0f0f 0%, #0f0f0f 15%, #0f0f0f 60%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: background .5s ease;
-    background-size: 200% 100%;
-    width: fit-content;
-}
-
-.linear-gradient--blue:hover {
-    background: linear-gradient(to right, #0f0f0f 0%, #0f0f0f 15%, #0000ff 60%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-position-x: left;
-    background-size: 100% 100%;
-    }
-
-
-.post-footer {
-    border: 1px;
-    border-color: #f5f5f5;
-    border-style: solid;
-    border-bottom-style: none;
-    border-left-style: none;
-    border-right-style: none;
-    text-align: right;
-    padding-top: 1rem;
-    margin-top: 5rem;
+.font-fam--ladi-weak-large {
+  font-family: "Ladi-Weak";
+  font-size: clamp(8.5rem, 3.98vw + 6.91rem, 12rem);
+  padding-bottom: 3rem;
 }
 
 
-/*       buttons        */
+
+/*      BUTTONS STYLES & DISPLAYS       */
 
 button,
 .btn {
-    color: #f5f5f5;
-    font-size: clamp(1.5rem, 2.1rem + 0.71vw, 3rem);
-    /* font-size: 2.2rem; */
-    background-color: transparent;
-    border: 2px solid #f5f5f5;
-    border-radius: 10rem;
-    text-decoration: none;
-    padding: 1.5rem 6rem;
-    width: 10rem;
-    text-align: center;
-    transition: .3s;
+  background-color: transparent;
+  color: rgb(245, 245, 245);
+  font-size: clamp(1.5rem, 2.1rem + 0.71vw, 3rem);
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid rgb(245, 245, 245);
+  border-radius: 10rem;
+  padding: 1.5rem 6rem;
+  width: 10rem;
+  transition: 0.3s;
 }
 
 button:hover,
 .btn:hover {
-    background-color: #f5f5f5;
-    color: #0000ff;
-    transition: .3s;
+  background-color: rgb(245, 245, 245);
+  color: rgb(0, 0, 255);
 }
 
 .btn-secondary {
-    text-decoration: underline;
-    text-decoration-thickness: 2.5px
+  text-decoration: underline;
+  text-decoration-thickness: 0.25rem;
 }
 
 .btn-secondary:hover {
-    font-style: italic;
-    letter-spacing: .4px;
+  font-style: italic;
+  letter-spacing: 0.4px;
 }
 
 .btn-secondary:visited {
-    color: #0f0f0f;
+  color: inherit;
 }
 
 .flex-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    padding: 7rem 0 7rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 7rem 0 7rem;
+}
+
+
+
+/*         OTHER STYLES        */
+
+.text-align--center {
+  text-align: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
 }
 
 .item-align--center {
-    align-self: center;
+  align-self: center;
 }
 
-/*        general margins         */
-
-.small-margin {
-    padding: 6rem 2.5rem 7rem;
+.full-height {
+  height: 100vh;
 }
 
-.medium-margin {
-    padding: 6rem 2.5rem;
+.box-sizing--border-box {
+  box-sizing: border-box;
 }
 
-.vlarge-margin {
-    box-sizing: border-box;
-    height: 100vh;
-    padding: 21.5rem 2.5rem 0;
-}
-/* valorar si canviar els noms de dalt de margin a padding */
+/*           FOOTER           */
 
-
-/*           other margins       */
-.margin-top--large {
-    margin-top: 10rem;
-}
-
-.main-p + .main-p {
-    padding-top: 3rem;
+.post-footer {
+  text-align: right;
+  border: 1px;
+  border-bottom-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border-color: rgb(245, 245, 245);
+  border-style: solid;
+  padding-top: 1rem;
+  margin-top: 5rem;
+  margin-bottom: 0;
 }
 
-/*             images svgs and other            */
 
-.flex-display {
-    display: flex;
-    flex-direction: column;
 
+/*                DECORATION EFFECTS                */
+
+
+/* Blue gradient on hover */
+
+.linear-gradient--blue {
+  background: linear-gradient(
+    to right,
+    rgb(15, 15, 15) 0%,
+    rgb(15, 15, 15) 15%,
+    rgb(15, 15, 15) 60%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background 0.5s ease;
+  background-size: 200% 100%;
+  width: fit-content;
 }
+
+.linear-gradient--blue:hover {
+  background: linear-gradient(
+    to right,
+    rgb(15, 15, 15) 0%,
+    rgb(15, 15, 15) 15%,
+    rgb(0, 0, 255) 60%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position-x: left;
+  background-size: 100% 100%;
+}
+
+/* Name animation */
 
 .svg-name {
-    fill: #f5f5f5;
+    fill: rgb(245, 245, 245);
     /* position: relative;
-    left: 90%; */
+      left: 90%; */
     align-self: flex-end;
     margin-top: 20vh;
+  }
 
-}
-
-.rotation {
+  .rotation {
     animation: rotate 10s linear infinite;
-}
+  }
 
-@keyframes rotate {
+  @keyframes rotate {
     to {
-        transform: rotate(360deg);
+      transform: rotate(360deg);
     }
-}
+  }
 
-img[alt="profile-picture-marina"] {
-    width: 100vw;
-    object-fit: cover;
 
-}
+/* Illustration animation */
 
 img[alt="yellow-animation"] {
     max-height: 50rem;
     display: block;
     margin: 0 auto;
+  }
+
+
+  /* Profile picture */
+
+img[alt="profile-picture-marina"] {
+  width: 100vw;
+  object-fit: cover;
 }
 
-    /* IMAGES HOVER */
+
+
+/* Images on hover effect */
 
 a.floating-image {
-    position: relative;
-    color: #f5f5f5;
-    text-decoration-line: underline;
-    text-decoration-thickness: 2.5px
-  }
-  
-  a.floating-image img {
-    position: absolute;
-    opacity: 0;
-    left: -13rem;
-    top: -3rem;
-    /* transition: opacity .5s, top .5s; */
-  }
-  
-  a.floating-image:hover img {
-    opacity: 1;
-    top: 20px;
-  }
-  .floating-image:visited {
-    color: #f5f5f5;
-  }
+  position: relative;
+  color: rgb(245, 245, 245);
+  text-decoration-line: underline;
+  text-decoration-thickness: 2.5px;
+}
+
+a.floating-image img {
+  position: absolute;
+  opacity: 0;
+  left: -15rem;
+  top: -10rem;
+  transition: opacity 0.5s, top 0.5s;
+}
+
+a.floating-image img:hover {
+  opacity: 1;
+}
+
+.floating-image:visited {
+  color: rgb(245, 245, 245);
+}
 
 
 
-/*       RESPONSIVE       */
+/*              RESPONSIVE              */
 
 @media screen and (min-width: 580px) {
+  .small-margin {
+    padding: 5rem;
+  }
 
-    .small-margin {
-        padding: 5rem;
-    }
+  .medium-margin {
+    padding: 5rem;
+  }
 
-    .medium-margin {
-        padding: 5rem;
-    }
-
-    .vlarge-margin {
-        padding: 20rem 5rem 0;
-    }
-
+  .large-margin {
+    padding: 20rem 5rem 0;
+  }
 }
 
 @media screen and (min-width: 950px) {
+  .pre-footer {
+    display: flex;
+    gap: 3rem;
+  }
 
-    .pre-footer {
-        display: flex;
-        gap: 3rem;
-        ;
-    }
+  .half-viewport {
+    width: 50vw;
+  }
 
-    .half-viewport {
-        width: 50vw;
-        /* background-color: yellowgreen; */
-    }
+  .small-margin {
+    padding: 7.5rem;
+  }
 
+  .medium-margin {
+    padding: 7.5rem;
+  }
 
-    .small-margin {
-        padding: 7.5rem;
-    }
-
-    .medium-margin {
-        padding: 7.5rem;
-    }
-
-    .vlarge-margin {
-        padding: 20rem 7.5rem 0;
-    }
+  .large-margin {
+    padding: 20rem 7.5rem 0;
+  }
 }
 
-
 @media screen and (min-width: 1200px) {
-    .section-split {
-        display: flex;
-    }
+  .section-split {
+    display: flex;
+  }
 
-    [alt="profile-picture-marina"] {
-        max-width: 50vw;
-        height: 100%;
-        object-fit: none;
-    }
+  [alt="profile-picture-marina"] {
+    max-width: 50vw;
+    height: 100%;
+    object-fit: none;
+  }
 
-    .margin-top--large {
-        margin-top: 15rem;
-    }
+  .small-margin {
+    padding: 10rem;
+  }
+
+  .medium-margin {
+    padding: 10rem;
+  }
+
+  .large-margin {
+    padding: 20rem 10rem 0;
+  }
+
+  .margin-top--large {
+    margin-top: 18rem;
+  }
 }
 
 @media screen and (min-width: 1440px) {
+  .small-margin {
+    padding: 10rem;
+  }
 
+  .medium-margin {
+    padding: 10rem;
+  }
 
-    .small-margin {
-        padding: 10rem;
-    }
-
-    .medium-margin {
-        padding: 10rem;
-    }
-
-    .vlarge-margin {
-        box-sizing: border-box;
-        height: 100vh;
-        padding: 20rem 10rem 0;
-    }
-
+  .large-margin {
+    padding: 20rem 10rem 0;
+  }
 }
-
-
-
-
-
-
-/* deletables */
-
-
-

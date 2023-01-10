@@ -8,13 +8,20 @@ body {
   font-family: "Roboto Condensed", sans-serif;
   cursor: crosshair;
 }
-
+/* 
 @font-face {
   font-family: "Ladi-Weak";
   src: local("Ladi-Weak") url("Ladi-Weak.woff2") format("woff2"),
     local("Ladi-Weak") url("Ladi-Weak.woff") format("woff");
-}
+} */
 
+
+@font-face {
+  font-family: 'ladiweak';
+  src: url('http://www.apellidofrances.com.mialias.net/testings-about/fonts/ladi-weak-webfont.woff2') format('woff2'),
+       url('http://www.apellidofrances.com.mialias.net/testings-about/fonts/ladi-weak-webfont.woff') format('woff');
+  font-weight: normal;
+}
 /*               NAVIGATION BAR                */
 
 .nav-bar {
@@ -48,6 +55,7 @@ body {
 
 .nav-bar-item:visited {
   color: rgb(0, 0, 255);
+  font-style: normal;
 }
 
 /*               GENERAL STYLES                */
@@ -55,15 +63,15 @@ body {
 /*        MARGINS         */
 
 .small-margin {
-  padding: 6rem 2.5rem 7rem;
+  padding: 4rem 2.5rem 7rem;
 }
 
 .medium-margin {
-  padding: 6rem 2.5rem;
+  padding: 8rem 2.5rem;
 }
 
 .large-margin {
-  padding: 21.5rem 2.5rem 0;
+  padding: 17rem 2.5rem 0;
 }
 
 /*      Other margins       */
@@ -75,7 +83,6 @@ body {
 .margin-top--large {
   margin-top: 10rem;
 }
-
 
 /*         HEADINGS & P           */
 
@@ -137,11 +144,11 @@ h3 {
 }
 
 .font-fam--ladi-weak {
-  font-family: "Ladi-Weak";
+  font-family: "ladiweak";
 }
 
 .font-fam--ladi-weak-large {
-  font-family: "Ladi-Weak";
+  font-family: "ladiweak";
   font-size: clamp(8.5rem, 3.98vw + 6.91rem, 12rem);
   padding-bottom: 3rem;
 }
@@ -170,18 +177,19 @@ button:hover,
   color: rgb(0, 0, 255);
 }
 
-.btn-secondary {
+.btn-secondary--black {
+  color: rgb(15, 15, 15);
   text-decoration: underline;
   text-decoration-thickness: 0.25rem;
 }
 
-.btn-secondary:hover {
+.btn-secondary--black:hover {
   font-style: italic;
   letter-spacing: 0.4px;
 }
 
-.btn-secondary:visited {
-  color: inherit;
+.btn-secondary--black:visited {
+  color: rgb(15, 15, 15);
 }
 
 .flex-buttons {
@@ -203,75 +211,44 @@ button:hover,
   flex-direction: column;
 }
 
+.box-sizing--border-box {
+  box-sizing: border-box;
+}
+
 .item-align--center {
   align-self: center;
 }
 
 .full-height {
-  height: 100vh;
+  /* height: 100vh; */
+  height: max(100vh, 85rem)
+  
 }
 
-.box-sizing--border-box {
-  box-sizing: border-box;
-}
 
 /*           FOOTER           */
 
 .post-footer {
   text-align: right;
-  border: 1px;
+  border: 1px solid rgb(245, 245, 245);
   border-bottom-style: none;
   border-left-style: none;
   border-right-style: none;
-  border-color: rgb(245, 245, 245);
-  border-style: solid;
   padding-top: 1rem;
   margin-top: 5rem;
   margin-bottom: 0;
 }
 
 
-
 /*                DECORATION EFFECTS                */
 
-
-/* Blue gradient on hover */
-
-.linear-gradient--blue {
-  background: linear-gradient(
-    to right,
-    rgb(15, 15, 15) 0%,
-    rgb(15, 15, 15) 15%,
-    rgb(15, 15, 15) 60%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: background 0.5s ease;
-  background-size: 200% 100%;
-  width: fit-content;
-}
-
-.linear-gradient--blue:hover {
-  background: linear-gradient(
-    to right,
-    rgb(15, 15, 15) 0%,
-    rgb(15, 15, 15) 15%,
-    rgb(0, 0, 255) 60%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-position-x: left;
-  background-size: 100% 100%;
-}
 
 /* Name animation */
 
 .svg-name {
     fill: rgb(245, 245, 245);
-    /* position: relative;
-      left: 90%; */
     align-self: flex-end;
-    margin-top: 20vh;
+    margin-top: 15vh;
   }
 
   .rotation {
@@ -285,6 +262,71 @@ button:hover,
   }
 
 
+/* Profile picture */
+
+img[alt="profile-picture-marina"] {
+  width: 100vw;
+  object-fit: cover;
+}
+
+/* Blue gradient on hover */
+
+.linear-gradient--blue {
+  background: linear-gradient(
+    to right,
+    rgb(15, 15, 15) 0%,
+    rgb(15, 15, 15) 15%,
+    rgb(15, 15, 15) 60%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background 0.5s ease;
+  background-size: 200% 100%;
+  width: fit-content;
+}
+
+.linear-gradient--blue:hover {
+  background: linear-gradient(
+    to right,
+    rgb(15, 15, 15) 0%,
+    rgb(15, 15, 15) 15%,
+    rgb(0, 0, 255) 60%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position-x: left;
+  background-size: 100% 100%;
+/* background-clip added without webkit to ensure compatibility */
+}
+
+/* Images on hover effect */
+
+.reveal-image {
+  position: relative;
+  color: rgb(245, 245, 245);
+  text-decoration-line: underline;
+  text-decoration-thickness: 2.5px;
+}
+
+.reveal-image:hover .hide {
+  display: block;
+  position: absolute;
+  opacity: 1;
+  left: -15rem;
+  top: -10rem;
+  /* Las transiciones no funcionan con display none/block */
+  /* El cominador (a ratos !!) para trabajar en local es [espacio] y para trabajar en prod es [+] */
+}
+
+.hide {
+  display: none;
+}
+
+.reveal-image:visited {
+  color: rgb(245, 245, 245);
+}
+
+
 /* Illustration animation */
 
 img[alt="yellow-animation"] {
@@ -292,42 +334,6 @@ img[alt="yellow-animation"] {
     display: block;
     margin: 0 auto;
   }
-
-
-  /* Profile picture */
-
-img[alt="profile-picture-marina"] {
-  width: 100vw;
-  object-fit: cover;
-}
-
-
-
-/* Images on hover effect */
-
-a.floating-image {
-  position: relative;
-  color: rgb(245, 245, 245);
-  text-decoration-line: underline;
-  text-decoration-thickness: 2.5px;
-}
-
-a.floating-image img {
-  position: absolute;
-  opacity: 0;
-  left: -15rem;
-  top: -10rem;
-  transition: opacity 0.5s, top 0.5s;
-}
-
-a.floating-image img:hover {
-  opacity: 1;
-}
-
-.floating-image:visited {
-  color: rgb(245, 245, 245);
-}
-
 
 
 /*              RESPONSIVE              */
@@ -381,11 +387,11 @@ a.floating-image img:hover {
   }
 
   .small-margin {
-    padding: 10rem;
+    padding: 10rem 10rem 13rem;
   }
 
   .medium-margin {
-    padding: 10rem;
+    padding: 13rem 10rem;
   }
 
   .large-margin {
@@ -393,17 +399,31 @@ a.floating-image img:hover {
   }
 
   .margin-top--large {
-    margin-top: 18rem;
+    margin-top: 20rem;
   }
+}
+
+@media screen and (min-width:950px) and (max-width:1439px){
+  .main-p--variation {
+    font-size: 3.7rem;
+  }
+
+  .relative-margin {
+    padding: 7.5rem 6.5rem 10rem;
+  }
+/* 
+  .svg-name {
+    margin-top: 5vh;
+  } */
 }
 
 @media screen and (min-width: 1440px) {
   .small-margin {
-    padding: 10rem;
+    padding: 10rem 10rem 13rem;
   }
 
   .medium-margin {
-    padding: 10rem;
+    padding: 13rem 10rem;
   }
 
   .large-margin {

@@ -8,20 +8,15 @@ body {
   font-family: "Roboto Condensed", sans-serif;
   cursor: crosshair;
 }
-/* 
-@font-face {
-  font-family: "Ladi-Weak";
-  src: local("Ladi-Weak") url("Ladi-Weak.woff2") format("woff2"),
-    local("Ladi-Weak") url("Ladi-Weak.woff") format("woff");
-} */
-
 
 @font-face {
   font-family: 'ladiweak';
-  src: url('http://www.apellidofrances.com.mialias.net/testings-about/fonts/ladi-weak-webfont.woff2') format('woff2'),
-       url('http://www.apellidofrances.com.mialias.net/testings-about/fonts/ladi-weak-webfont.woff') format('woff');
+  src: url('https://esatdev.com/2022/marina/about-me/fonts/ladi-weak-webfont.woff2') format('woff2'),
+       url('https://esatdev.com/2022/marina/about-me/fonts/ladi-weak-webfont.woff') format('woff');
   font-weight: normal;
 }
+
+
 /*               NAVIGATION BAR                */
 
 .nav-bar {
@@ -58,6 +53,8 @@ body {
   font-style: normal;
 }
 
+
+
 /*               GENERAL STYLES                */
 
 /*        MARGINS         */
@@ -82,6 +79,10 @@ body {
 
 .margin-top--large {
   margin-top: 10rem;
+}
+
+.margin-bottom--large {
+  margin-bottom: 10rem;
 }
 
 /*         HEADINGS & P           */
@@ -120,8 +121,6 @@ h3 {
   font-weight: 300;
 }
 
-
-
 /*         FONTS & COLORS         */
 
 .bg-color--white {
@@ -152,8 +151,6 @@ h3 {
   font-size: clamp(8.5rem, 3.98vw + 6.91rem, 12rem);
   padding-bottom: 3rem;
 }
-
-
 
 /*      BUTTONS STYLES & DISPLAYS       */
 
@@ -199,7 +196,6 @@ button:hover,
   padding: 7rem 0 7rem;
 }
 
-
 /*         OTHER STYLES        */
 
 .text-align--center {
@@ -220,15 +216,13 @@ button:hover,
 }
 
 .full-height {
-  /* height: 100vh; */
-  height: max(100vh, 85rem)
+  min-height: 100vh;
   
 }
 
-
 /*           FOOTER           */
 
-.post-footer {
+.boder-top--solid {
   text-align: right;
   border: 1px solid rgb(245, 245, 245);
   border-bottom-style: none;
@@ -239,16 +233,16 @@ button:hover,
   margin-bottom: 0;
 }
 
-
-/*                DECORATION EFFECTS                */
-
+/*       DECORATION EFFECTS       */
 
 /* Name animation */
 
 .svg-name {
     fill: rgb(245, 245, 245);
     align-self: flex-end;
-    margin-top: 15vh;
+    position: absolute;
+    bottom: 5rem;
+    right: 2.5rem;
   }
 
   .rotation {
@@ -260,7 +254,6 @@ button:hover,
       transform: rotate(360deg);
     }
   }
-
 
 /* Profile picture */
 
@@ -314,8 +307,6 @@ img[alt="profile-picture-marina"] {
   opacity: 1;
   left: -15rem;
   top: -10rem;
-  /* Las transiciones no funcionan con display none/block */
-  /* El cominador (a ratos !!) para trabajar en local es [espacio] y para trabajar en prod es [+] */
 }
 
 .hide {
@@ -326,14 +317,14 @@ img[alt="profile-picture-marina"] {
   color: rgb(245, 245, 245);
 }
 
-
-/* Illustration animation */
+/* Illustration animated */
 
 img[alt="yellow-animation"] {
     max-height: 50rem;
     display: block;
     margin: 0 auto;
   }
+
 
 
 /*              RESPONSIVE              */
@@ -353,7 +344,7 @@ img[alt="yellow-animation"] {
 }
 
 @media screen and (min-width: 950px) {
-  .pre-footer {
+  .footer {
     display: flex;
     gap: 3rem;
   }
@@ -372,6 +363,11 @@ img[alt="yellow-animation"] {
 
   .large-margin {
     padding: 20rem 7.5rem 0;
+  }
+  
+  .svg-name {
+    bottom: 10rem;
+    right: 7.5rem;
   }
 }
 
@@ -401,6 +397,11 @@ img[alt="yellow-animation"] {
   .margin-top--large {
     margin-top: 20rem;
   }
+
+  .svg-name {
+    bottom: 10rem;
+    right: 10rem;
+  }
 }
 
 @media screen and (min-width:950px) and (max-width:1439px){
@@ -411,10 +412,7 @@ img[alt="yellow-animation"] {
   .relative-margin {
     padding: 7.5rem 6.5rem 10rem;
   }
-/* 
-  .svg-name {
-    margin-top: 5vh;
-  } */
+
 }
 
 @media screen and (min-width: 1440px) {
